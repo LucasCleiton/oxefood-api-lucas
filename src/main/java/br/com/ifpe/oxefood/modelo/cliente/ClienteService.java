@@ -1,6 +1,6 @@
 package br.com.ifpe.oxefood.modelo.cliente;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 import jakarta.transaction.Transactional;
 
@@ -18,7 +18,7 @@ public class ClienteService {
 
         cliente.setHabilitado(Boolean.TRUE);
         cliente.setVersao(1L);
-        cliente.setDataCriacao(LocalDate.now());
+        // cliente.setDataCriacao(LocalDate.now());
         return repository.save(cliente);
     }
 
