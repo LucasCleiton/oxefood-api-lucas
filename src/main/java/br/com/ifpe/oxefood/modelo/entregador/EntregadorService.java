@@ -30,4 +30,33 @@ public class EntregadorService {
         return repository.findById(id).get(); // select * from cliente where id=?
     }
 
+    @Transactional
+    public void update(Long id, Entregador entregadorAlterado) {
+
+        Entregador entregador = repository.findById(id).get();
+
+        entregador.setNome(entregadorAlterado.getNome());
+        entregador.setCpf(entregadorAlterado.getCpf());
+        entregador.setRg(entregadorAlterado.getRg());
+        entregador.setDataNascimento(entregadorAlterado.getDataNascimento());
+        entregador.setFoneCelular(entregadorAlterado.getFoneCelular());
+
+        entregador.setFoneFixo(entregadorAlterado.getFoneFixo());
+        entregador.setQtdEntregasRealizadas(entregadorAlterado.getQtdEntregasRealizadas());
+        entregador.setValorFrete(entregadorAlterado.getValorFrete());
+        entregador.setEnderecoRua(entregadorAlterado.getEnderecoRua());
+        entregador.setEnderecoComplemento(entregadorAlterado.getCpf());
+
+        entregador.setEnderecoNumero(entregadorAlterado.getEnderecoNumero());
+        entregador.setEnderecoBairro(entregadorAlterado.getFoneCelular());
+        entregador.setEnderecoCep(entregadorAlterado.getEnderecoCep());
+        entregador.setEnderecoCidade(entregadorAlterado.getFoneFixo());
+        entregador.setEnderecoUf(entregadorAlterado.getEnderecoUf());
+
+        entregador.setAtivo(entregadorAlterado.getAtivo());
+
+        entregador.setVersao(entregador.getVersao() + 1);
+        repository.save(entregador);
+    }
+
 }
